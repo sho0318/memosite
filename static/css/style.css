@@ -1,0 +1,13 @@
+/* リセットCSSは割愛します */
+/* 開くボタン */
+.button-open {
+    display: block;
+    margin: 0 auto;
+    width: 20rem;
+    padding: 1em;
+    background-color: #3140c9;
+    color: #eaeaea;
+    border-radius: 20rem;
+    cursor: pointer;
+}
+

@@ -1,0 +1,17 @@
+{% extends "./base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+{% csrf_token %}
+
+<form role="form" method="post">
+    {% csrf_token %}
+    <div class="notification">
+      <p>あなたのアカウント「{{ user.username }}」を、本当に削除してもよろしいですか？</p>
+    </div>
+    <div class="buttons">
+      <button type="submit" class="button is-danger">Delete</button>
+      <a class="button is-success" href="javascript:void(0);" onclick="window.history.back();" class="button is-text">Back</a>
+    </div>
+</form>
+
+{% endblock %}

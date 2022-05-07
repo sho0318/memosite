@@ -1,0 +1,16 @@
+{% extends "./login_base.html" %}
+{% load widget_tweaks %}
+{% block head %}
+    <META http-equiv="Refresh" content="3;URL={% url 'index' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="notification">
+    <p>ログアウトしました</p>
+    <p>3秒後に自動でトップページへ遷移します</p>
+</div>
+<a class="button is-primary" href="{% url 'index' %}">TopPage</a>
+
+
+{% endblock %}
