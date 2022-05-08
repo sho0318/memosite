@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import dj_database_url
+
+DEBUG = False
 
 try:
     from .local_settings import *
@@ -23,7 +26,6 @@ except ImportError:
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -33,6 +35,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 
@@ -60,22 +63,12 @@ if not DEBUG:
         'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
 
+    SECRET_KEY = os.environ['SECRET_KEY']
+
     # HerokuのConfigを読み込み
     django_heroku.settings(locals())
 
-
-
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-
-
-ALLOWED_HOSTS = []
-
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -92,8 +85,6 @@ INSTALLED_APPS = [
     'allauth.account', # 追加
     'allauth.socialaccount', # 追加
 ]
-
-
 
 ROOT_URLCONF = 'memosite.urls'
 
@@ -196,3 +187,22 @@ LOGOUT_URL = 'accounts:logout_complete'
 LOGIN_REDIRECT_URL = '/index/frontpage' # ログイン後のリダイレクト先
 ACCOUNT_LOGOUT_REDIRECT_URL = '/index/' #　ログアウト後のリダイレクト先
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'urlmemo2022@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+if not DEBUG:
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': '',
+        'HOST': 'host',
+        'PORT': '',
+    }
+}
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
