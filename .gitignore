@@ -1,0 +1,4 @@
+__pycache__
+db.sqlit3
+.DS_Store
+memosite/local_settings.py

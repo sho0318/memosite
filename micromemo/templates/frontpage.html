@@ -1,0 +1,71 @@
+{% extends "./base.html" %}
+{% load widget_tweaks %}
+{% load static%}
+{% block content %}
+
+<div class="my_directory_wrapper">
+    <div><h2 class="title is-2">Home</h2></div>
+    <div><button class="js-open button is-primary">mkdir</button></div>
+</div>
+<hr/>
+
+{% for directory in posts %}
+{% if directory.create_user.id == user.id%}
+<div class="box">
+    <h1 class="title">{{directory.title}}</h1>
+    <h2 class="block">
+        {{directory.comment}}
+    </h2>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-success" href="{% url 'post_detail' directory.id%}">Detail</a>
+                <a class="button is-success" href="{% url 'directory_update' directory.pk%}">Update</a>
+                <a class="button is-dark" href="{% url 'directory_delete' directory.pk%}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% if count == 0%}
+<div class="notification">
+    <p>ディレクトリはまだありません</p>
+</div>
+{% endif %}
+
+<hr/>
+
+<!-- オーバーレイ -->
+<div id="overlay" class="overlay"></div>
+<!-- モーダルウィンドウ -->
+<div class="modal-window box">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+            {{forms.title|add_class:"input"}}
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+            {{forms.comment|add_class:"textarea"}}
+            </div>
+        </div>
+        
+        <div class="field is-grouped">
+            <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+            </div>
+            <div class="control">
+            <button class="button is-link is-light js-close">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
