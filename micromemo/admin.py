@@ -1,4 +1,3 @@
-from msilib.schema import Directory
 from django.contrib import admin
 from .models import Document,Directory
 
