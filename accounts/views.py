@@ -1,4 +1,3 @@
-from re import template
 from django.http.response import HttpResponseRedirect
 from django.views.generic import TemplateView, CreateView
 from django.contrib.auth import login

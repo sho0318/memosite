@@ -1,4 +1,3 @@
-from importlib.resources import path
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,UpdateView,DeleteView
 from django.urls import reverse_lazy,reverse

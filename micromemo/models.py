@@ -1,8 +1,4 @@
-from multiprocessing import parent_process
-import re
-from django import forms
 from django.db import models
-from django.template.defaultfilters import slugify
 import uuid
 import sys
 sys.path.append('../')

@@ -1,7 +1,4 @@
-from msilib.schema import Directory
-from re import template
 from django.contrib.auth import views as auth_views
-from django.contrib import admin,auth
 from django.urls import path,include
 from .views import SignUpView,HomeView
 
