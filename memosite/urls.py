@@ -1,6 +1,6 @@
 from re import template
 from django.contrib.auth import views as auth_views
-from django.contrib import admin,auth
+from django.contrib import admin
 from django.urls import path,include
 from micromemo.views import frontpage,post_detail,indexpage,DocumentUpdateView,DocumentDeleteView,DirectoryUpdateView,DirectoryDeleteView,contact_view,complete
 from accounts.views import SignUpView,HomeView,Logout,LogoutComplete,UserChangeView,AccountView,UserDeleteView
