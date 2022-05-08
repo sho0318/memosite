@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 SECRET_KEY = 'django-insecure-h!#n)0$=z&@0d_-8*+-w&*&d4j*3108oy9shgy!2c3a#(ck3ad'
 
