@@ -2,9 +2,11 @@ from re import template
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
 from django.urls import path,include
-from micromemo.views import frontpage,post_detail,indexpage,DocumentUpdateView,DocumentDeleteView,DirectoryUpdateView,DirectoryDeleteView,contact_view,complete
+from micromemo.views import frontpage,post_detail,indexpage,DocumentUpdateView,DocumentDeleteView,DirectoryUpdateView,DirectoryDeleteView,contact_view,complete,my_customized_server_error
 from accounts.views import SignUpView,HomeView,Logout,LogoutComplete,UserChangeView,AccountView,UserDeleteView
 
+
+handler500 = my_customized_server_error
 
 urlpatterns = [
     path('admin/sho/admin/', admin.site.urls),
