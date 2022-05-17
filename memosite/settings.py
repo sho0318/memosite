@@ -185,4 +185,4 @@ if not DEBUG:
     ALLOWED_HOSTS = ['*']
     DATABASES['default'].update(db_from_env)
 
-STATIC_URL = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/staticfiles/'
