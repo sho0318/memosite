@@ -33,7 +33,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 STATICFILES_DIRS = [
@@ -55,9 +54,6 @@ if not DEBUG:
         os.path.join(BASE_DIR, 'micromemo/static'),
     )
 
-    MIDDLEWARE += [
-        'whitenoise.middleware.WhiteNoiseMiddleware',
-    ]
 
     SECRET_KEY = os.environ['SECRET_KEY']
 
