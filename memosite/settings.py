@@ -12,8 +12,6 @@ except ImportError:
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
 
 MIDDLEWARE = [
@@ -25,12 +23,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'micromemo/static'),
-]
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 if not DEBUG:
     # Heroku settings
@@ -50,6 +42,13 @@ if not DEBUG:
 
     # HerokuのConfigを読み込み
     django_heroku.settings(locals())
+else:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'micromemo/static'),
+    ]
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 ALLOWED_HOSTS = ['*']
 
