@@ -184,3 +184,5 @@ if not DEBUG:
     }
     ALLOWED_HOSTS = ['*']
     DATABASES['default'].update(db_from_env)
+
+STATIC_URL = '/staticfiles/'
