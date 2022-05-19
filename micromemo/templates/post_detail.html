@@ -19,9 +19,9 @@
 
 {% for document in post.documents.all %}
 <div class="box">
-<article class="media">
-    <div class="media-content">
-        <div class="content">
+<article class="media my_detail_wrapper">
+    <div class="media-content my_detail_wrapper">
+        <div class="content my_detail_wrapper">
                 <div class="my_document_wrapper">
                     <strong>
                         <h4>{{document.title}}</h4>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 {% if document.url %}
-                <div class="my_url_wrapper">
+                <div class="my_url_wrapper my_detail_wrapper">
                     <a href="{{document.url}}" target="_blank" rel="noopener noreferrer" class="my_url">{{document.url}}</a>
                 </div>
                 {% endif %}
