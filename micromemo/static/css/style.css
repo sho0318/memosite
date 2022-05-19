@@ -147,3 +147,7 @@ main {
 .my_document_wrapper div{
     padding-left: 10px;
 }
+
+.my_navMenu{
+    display: flex;
+}
