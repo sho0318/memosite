@@ -155,11 +155,3 @@ main {
 .my_url{
     word-break: break-all;
 }
-
-.my_url_wrapper{
-    width: 100%;
-}
-
-.my_detail_wrapper{
-    width: 100%;
-}
