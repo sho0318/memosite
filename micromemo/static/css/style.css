@@ -149,7 +149,10 @@ main {
 }
 
 .my_navMenu{
-    width: 100%;
+    justify-content: flex-end;
+    margin-left: auto;
+    align-items: stretch;
+    display: flex;
 }
 
 .my_url{
