@@ -151,3 +151,7 @@ main {
 .my_navMenu{
     display: flex;
 }
+
+.my_url{
+    word-wrap:break-all;
+}
