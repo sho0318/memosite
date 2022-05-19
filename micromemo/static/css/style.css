@@ -167,3 +167,9 @@ main {
     position: relative;
     z-index: 30;
 }
+
+@media screen and (max-width:1024px) {
+    .my_container{
+        width: 100%;   
+    }
+}
