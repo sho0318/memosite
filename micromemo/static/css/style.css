@@ -152,10 +152,6 @@ main {
     display: flex;
 }
 
-.my_url{
-    word-wrap:break-all;
-}
-
-.meddia{
+.my_url_wrapper{
     width: 100%;
 }
