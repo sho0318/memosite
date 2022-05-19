@@ -177,13 +177,13 @@ EMAIL_USE_TLS = True
 if not DEBUG:
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
-if not DEBUG:
-    db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-    DATABASES = {
-        'default': dj_database_url.config()
-    }
-    ALLOWED_HOSTS = ['*']
-    DATABASES['default'].update(db_from_env)
+
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES = {
+    'default': dj_database_url.config()
+}
+ALLOWED_HOSTS = ['*']
+DATABASES['default'].update(db_from_env)
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
