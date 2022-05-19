@@ -5,7 +5,7 @@ from django.urls import path,include
 from micromemo.views import frontpage,post_detail,indexpage,DocumentUpdateView,DocumentDeleteView,DirectoryUpdateView,DirectoryDeleteView,contact_view,complete,my_customized_server_error
 from accounts.views import SignUpView,HomeView,Logout,LogoutComplete,UserChangeView,AccountView,UserDeleteView
 
-
+app_name = 'memosite'
 handler500 = my_customized_server_error
 
 urlpatterns = [
