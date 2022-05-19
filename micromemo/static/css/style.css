@@ -149,27 +149,9 @@ main {
 }
 
 .my_navMenu{
-    justify-content: flex-end;
-    margin-left: auto;
-    align-items: stretch;
     display: flex;
 }
 
 .my_url{
     word-break: break-all;
-}
-
-.my_navbar{
-    min-height: 3.25rem;
-    align-items: stretch;
-    display: flex;
-    background-color: #fff;
-    position: relative;
-    z-index: 30;
-}
-
-@media screen and (max-width:1024px) {
-    .my_container{
-        width: 100%;   
-    }
 }
